@@ -23,7 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'i2jk1iz%5@$sinisz!p4p07&e(&n#p#iuwcw@vn9_-(=%#v377'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = bool(int(os.environ.get('DEBUG',1)))
 
 ALLOWED_HOSTS = []
 
@@ -123,3 +124,5 @@ STATIC_URL = '/static/'
 
 # https://docs.djangoproject.com/en/2.2/ref/settings/#std:setting-AUTH_USER_MODEL
 AUTH_USER_MODEL = 'profiles_api.UserProfile'
+
+STATIC_ROOT = 'static/'
